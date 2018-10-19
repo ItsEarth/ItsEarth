@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ItsEarth.Models
 {
-    class Process
+    public  class Process
     {
         public string Id { get; set; }
         public string Name { get; set; }

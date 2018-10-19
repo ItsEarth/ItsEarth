@@ -15,7 +15,42 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ListView x:Name="ItemsListView"
+        <BoxView Color="Aqua" WidthRequest=" 160" HeightRequest="160" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="New List" VerticalOptions="Center" HorizontalOptions="Center" XAlign="Center"/>
+        
+        <Label Text="In your zone" VerticalOptions="Center" XAlign="Center"/>
+        <ListView x:Name="DisastersListView" RowHeight="80" AnchorX="100" VerticalOptions="Center" HorizontalOptions="Center" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text= "{Binding Name}" ></Label>
+                                <Label Text= "{Binding Description}" ></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label XAlign="Center" Text="Your Bags"/>
+        <ListView x:Name="YourListViews">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text= "{Binding Name}" ></Label>
+                                <!--   <Label Text= "{Binding Description}" ></Label>-->
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+       <!-- <StackLayout>
+            <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
@@ -24,22 +59,24 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="removi isso" 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="removi isso" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding Description}" 
+                                <Label Text="{Binding Description}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>-->
+
     </StackLayout>
 </ContentPage>

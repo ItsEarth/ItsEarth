@@ -17,11 +17,26 @@ namespace ItsEarth.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
+        public List<Disasters> disasters = new List<Disasters>
+        {
+            new Disasters{Name="Earthquake", Description = "Shake Shake" },
+            new Disasters {Name="Tsuname", Description = "Qater water" },
+            new Disasters {Name = "Hurrican", Description = "Wind Wind"}
+        };
+        public List<Bag> YourBags = new List<Bag>
+        {
+            new Bag{Name="Save Yourself"},
+            new Bag {Name="take me with You"},
+            new Bag {Name = "Dont leave me behind"}
+        };
+
 
         public ItemsPage()
         {
             InitializeComponent();
 
+            DisastersListView.ItemsSource = disasters.OrderByDescending(i =>i.Id).ToList();
+            YourListViews.ItemsSource = YourBags.OrderByDescending(i => i.Id).ToList();
             BindingContext = viewModel = new ItemsViewModel();
         }
 
@@ -34,7 +49,7 @@ namespace ItsEarth.Views
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            //ItemsListView.SelectedItem = null;
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
