@@ -15,7 +15,7 @@ namespace ItsEarth.Models
     public class HomeMenuItem
     {
         public MenuItemType Id { get; set; }
-
+        public int order { get; set; }
         public string Title { get; set; }
     }
 }

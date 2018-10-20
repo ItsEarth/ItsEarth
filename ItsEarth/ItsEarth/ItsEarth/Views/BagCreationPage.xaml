@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItsEarth.Views.BagCreationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Create A New Bag"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Font="26"   
+                   />
+            <Entry Text="What's Your Bag Name?"  />
+            <Picker x:Name="PickerDisaster" Title="What Disaster do you wanna be prepared for?"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Do You Want To Use a essencial itens pre-selection?"/>
+                <Switch IsToggled="True" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <Label Text="Your Bag" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <StackLayout>
+                <Label Text="Health Care"></Label>
+                <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="HealthStack" Orientation="Horizontal">
+                      
+                    </StackLayout>
+                </ScrollView>
+
+                <Label Text="Fire"></Label>
+                <ScrollView   Orientation="Horizontal">
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                            <Label WidthRequest="100" Text= "{Binding Name}" ></Label>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+
+            </StackLayout>
+
+            <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <BoxView WidthRequest="350" BackgroundColor="Aqua"/>
+                    <BoxView WidthRequest="350" BackgroundColor="Red"/>
+                    <BoxView WidthRequest="350" BackgroundColor="Green"/>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

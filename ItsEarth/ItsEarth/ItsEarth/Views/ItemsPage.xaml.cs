@@ -39,7 +39,14 @@ namespace ItsEarth.Views
             DisastersListView.ItemsSource = disasters.OrderByDescending(i =>i.Id).ToList();
             YourListViews.ItemsSource = YourBags.OrderByDescending(i => i.Id).ToList();
             //Carousel1.ItemsSource = disasters.OrderByDescending(i => i.Id).ToList();
-
+           
+                /* new UriImageSource
+            {
+                Uri = new Uri("./Resources/Logotst1.jpg")
+               // Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+                //CachingEnabled = true,
+                //CacheValidity = new TimeSpan(5, 0, 0, 0)
+            };*/
             BindingContext = viewModel = new ItemsViewModel();
         }
 
@@ -66,6 +73,11 @@ namespace ItsEarth.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+
+         async void Create_List(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new BagCreationPage()));
         }
     }
 }
