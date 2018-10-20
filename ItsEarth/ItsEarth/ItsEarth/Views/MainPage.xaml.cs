@@ -16,8 +16,11 @@ namespace ItsEarth.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
-
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Profile, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Infos, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Guides, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.WhereToGo, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,7 +29,16 @@ namespace ItsEarth.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.Profile:
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        break;
+                    case (int)MenuItemType.Guides:
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        break;
+                    case (int)MenuItemType.Infos:
+                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        break;
+                    case (int)MenuItemType.WhereToGo:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.About:

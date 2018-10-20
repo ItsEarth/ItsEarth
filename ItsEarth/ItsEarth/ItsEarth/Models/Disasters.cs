@@ -11,5 +11,6 @@ namespace ItsEarth.Models
         public string Description { get; set; }
         public Bag BagPattern { get; set; }
         public List<string> midia { get; set; }
+        public string logo { get; set; }
     }
 }

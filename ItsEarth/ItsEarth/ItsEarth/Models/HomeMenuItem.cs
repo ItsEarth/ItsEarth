@@ -6,7 +6,10 @@ namespace ItsEarth.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        Profile,
+        Infos,
+        Guides,
+        WhereToGo,
         About
     }
     public class HomeMenuItem

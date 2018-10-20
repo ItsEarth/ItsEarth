@@ -17,11 +17,12 @@ namespace ItsEarth.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
+        DisasterViewModel DViewModel;
         public List<Disasters> disasters = new List<Disasters>
         {
-            new Disasters{Name="Earthquake", Description = "Shake Shake" },
-            new Disasters {Name="Tsuname", Description = "Qater water" },
-            new Disasters {Name = "Hurrican", Description = "Wind Wind"}
+            new Disasters{Name="Earthquake", Description = "Shake Shake",logo =  "Resources/Logotst1.jpg" },
+            new Disasters {Name="Tsuname", Description = "Qater water", logo = "Resources/Logotst2.jpg" },
+            new Disasters {Name = "Hurrican", Description = "Wind Wind", logo = "Resources/Logotst3.jpg"}
         };
         public List<Bag> YourBags = new List<Bag>
         {
@@ -37,6 +38,8 @@ namespace ItsEarth.Views
 
             DisastersListView.ItemsSource = disasters.OrderByDescending(i =>i.Id).ToList();
             YourListViews.ItemsSource = YourBags.OrderByDescending(i => i.Id).ToList();
+            //Carousel1.ItemsSource = disasters.OrderByDescending(i => i.Id).ToList();
+
             BindingContext = viewModel = new ItemsViewModel();
         }
 

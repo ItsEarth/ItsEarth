@@ -18,15 +18,18 @@ namespace ItsEarth.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Guides, Title="Guides" },
+                new HomeMenuItem {Id = MenuItemType.Infos, Title="Info" },
+                new HomeMenuItem {Id = MenuItemType.Profile, Title="Your Profile" },
+                new HomeMenuItem {Id = MenuItemType.WhereToGo, Title="Where To Go" },
+                new HomeMenuItem {Id = MenuItemType.About, Title="About Us" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
 
             ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
-            {
+            { 
                 if (e.SelectedItem == null)
                     return;
 
