@@ -16,7 +16,32 @@
                 <Switch IsToggled="True" HorizontalOptions="Center"/>
             </StackLayout>
 
-            <Label Text="Your Bag" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Text="Categories" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0"></Label>
+                <ScrollView Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <StackLayout x:Name="ItemClassSelector" Orientation="Horizontal" Spacing="20">
+                        
+                    </StackLayout>
+
+                </ScrollView>
+            </Grid>
+            <Label Text="Itens" x:Name="tst"/>
+            <ScrollView Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <StackLayout x:Name="ItemList" Orientation="Horizontal" Spacing="20">
+
+                </StackLayout>
+            </ScrollView>
+
+                <Label Text="Your Bag" VerticalOptions="Center" HorizontalOptions="Center"/>
             <StackLayout>
                 <Label Text="Health Care"></Label>
                 <ScrollView Orientation="Horizontal" VerticalOptions="FillAndExpand">

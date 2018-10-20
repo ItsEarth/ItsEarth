@@ -25,6 +25,7 @@
                
                >
             <Image.GestureRecognizers>
+                
                 <TapGestureRecognizer 
                     Tapped="Create_List"
                     />
